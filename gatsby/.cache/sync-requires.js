@@ -9,6 +9,7 @@ exports.components = {
   "component---src-pages-404-js": hot(preferDefault(require("/home/russell/Desktop/projects/congratsby/gatsby/src/pages/404.js"))),
   "component---src-pages-beers-js": hot(preferDefault(require("/home/russell/Desktop/projects/congratsby/gatsby/src/pages/beers.js"))),
   "component---src-pages-index-js": hot(preferDefault(require("/home/russell/Desktop/projects/congratsby/gatsby/src/pages/index.js"))),
-  "component---src-pages-orders-js": hot(preferDefault(require("/home/russell/Desktop/projects/congratsby/gatsby/src/pages/orders.js")))
+  "component---src-pages-orders-js": hot(preferDefault(require("/home/russell/Desktop/projects/congratsby/gatsby/src/pages/orders.js"))),
+  "component---src-pages-pizzas-js": hot(preferDefault(require("/home/russell/Desktop/projects/congratsby/gatsby/src/pages/pizzas.js")))
 }
 
