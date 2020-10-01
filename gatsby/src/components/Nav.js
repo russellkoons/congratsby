@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
+// Function for moving between pages without using Link
 // function goToSlicemasters() {
 //   // 1. Wait for 2 seconds
 //   setTimeout(() => {
