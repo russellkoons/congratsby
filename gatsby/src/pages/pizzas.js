@@ -1,9 +1,10 @@
 import React from 'react';
+import Layout from '../components/Layout';
 
 export default function PizzasPage() {
   return (
-    <div>
+    <Layout>
       <p>Getcha pizza here</p>
-    </div>
+    </Layout>
   );
 }
