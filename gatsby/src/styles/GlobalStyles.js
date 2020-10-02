@@ -10,6 +10,7 @@ const GlobalStyles = createGlobalStyle`
     --white: #fff;
     --grey: #efefef;
   }
+
   html {
     background-image: url(${bg});
     background-size: 450px;
@@ -51,13 +52,16 @@ const GlobalStyles = createGlobalStyle`
   body::-webkit-scrollbar {
     width: 12px;
   }
+
   html {
     scrollbar-width: thin;
     scrollbar-color: var(--red) var(--white);
   }
+
   body::-webkit-scrollbar-track {
     background: var(--white);
   }
+  
   body::-webkit-scrollbar-thumb {
     background-color: var(--red) ;
     border-radius: 6px;
