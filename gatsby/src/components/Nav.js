@@ -1,5 +1,10 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import styled from 'styled-components';
+
+const NavStyles = styled.nav`
+  background: red;
+`;
 
 // Function for moving between pages without using Link
 // function goToSlicemasters() {
@@ -13,7 +18,7 @@ import { Link } from 'gatsby';
 
 export default function Nav() {
   return (
-    <nav>
+    <NavStyles>
       <ul>
         <li>
           <Link to="/">Hot Now</Link>
@@ -36,6 +41,6 @@ export default function Nav() {
           </button>
         </li> */}
       </ul>
-    </nav>
+    </NavStyles>
   );
 }
