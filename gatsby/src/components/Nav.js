@@ -3,11 +3,18 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const NavStyles = styled.nav`
-  background: green;
-`;
+  margin-bottom: 3rem;
 
-const UlStyles = styled.ul`
-  border: 10px solid yellow;
+  ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr auto 1fr 1fr;
+    grid-gap: 2rem;
+    align-items: center;
+  }
 `;
 
 // Function for moving between pages without using Link
@@ -23,7 +30,7 @@ const UlStyles = styled.ul`
 export default function Nav() {
   return (
     <NavStyles>
-      <UlStyles>
+      <ul>
         <li>
           <Link to="/">Hot Now</Link>
         </li>
@@ -44,7 +51,7 @@ export default function Nav() {
             Click me to see slicemasters after 2 seconds
           </button>
         </li> */}
-      </UlStyles>
+      </ul>
     </NavStyles>
   );
 }
