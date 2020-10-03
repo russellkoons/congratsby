@@ -3,7 +3,11 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const NavStyles = styled.nav`
-  background: red;
+  background: green;
+`;
+
+const UlStyles = styled.ul`
+  border: 10px solid yellow;
 `;
 
 // Function for moving between pages without using Link
@@ -19,7 +23,7 @@ const NavStyles = styled.nav`
 export default function Nav() {
   return (
     <NavStyles>
-      <ul>
+      <UlStyles>
         <li>
           <Link to="/">Hot Now</Link>
         </li>
@@ -40,7 +44,7 @@ export default function Nav() {
             Click me to see slicemasters after 2 seconds
           </button>
         </li> */}
-      </ul>
+      </UlStyles>
     </NavStyles>
   );
 }
