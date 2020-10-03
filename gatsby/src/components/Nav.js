@@ -15,6 +15,21 @@ const NavStyles = styled.nav`
     grid-gap: 2rem;
     align-items: center;
   }
+
+  li {
+    --rotate: -2deg;
+    transform: rotate(var(--rotate));
+    order: 1;
+    &:nth-child(1) {
+      --rotate: 1deg;
+    }
+    &:nth-child(2) {
+      --rotate: -2.5deg;
+    }
+    &:nth-child(4) {
+      --rotate: 2.5deg;
+    }
+  }
 `;
 
 // Function for moving between pages without using Link
