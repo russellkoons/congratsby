@@ -16,11 +16,19 @@ export default {
     },
     {
       name: 'slug',
-      title: 'slug',
+      title: 'Slug',
       type: 'slug',
       options: {
         source: 'name',
         maxLength: 100,
+      },
+    },
+    {
+      name: 'image',
+      title: 'Image',
+      type: 'image',
+      options: {
+        hotspot: true,
       },
     },
   ],
