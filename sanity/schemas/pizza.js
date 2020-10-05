@@ -4,7 +4,7 @@ export default {
   // Computer name
   name: 'pizza',
   // Visible title
-  title: 'pizzas',
+  title: 'Pizzas',
   type: 'document',
   icon,
   fields: [
