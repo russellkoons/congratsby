@@ -14,5 +14,14 @@ export default {
       type: 'string',
       description: 'What is the name of the topping?',
     },
+    {
+      name: 'vegetarian',
+      title: 'Vegetarian',
+      type: 'boolean',
+      description: '',
+      options: {
+        layout: 'checkbox',
+      },
+    },
   ],
 };
