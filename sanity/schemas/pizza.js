@@ -46,4 +46,15 @@ export default {
       of: [{ type: 'reference', to: [{ type: 'topping' }] }],
     },
   ],
+  preview: {
+    select: {
+      title: 'name',
+      media: 'image',
+      toppings: 'toppings',
+    },
+    prepare: (fields) => {
+      console.log(fields);
+      return 'pizza name';
+    },
+  },
 };
