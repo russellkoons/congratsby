@@ -55,8 +55,8 @@ export default {
       topping2: 'toppings.2.name',
       topping3: 'toppings.3.name',
     },
-    prepare: (fields) => {
-      console.log(fields);
+    prepare: ({ title, media, ...toppings }) => {
+      console.log(title, media, toppings);
       return 'pizza name';
     },
   },
