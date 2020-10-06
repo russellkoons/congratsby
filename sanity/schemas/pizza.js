@@ -43,7 +43,7 @@ export default {
       name: 'toppings',
       title: 'Toppings',
       type: 'array',
-      of: [{ type: 'string' }],
+      of: [{ type: 'reference', to: [{ type: 'topping' }] }],
     },
   ],
 };
