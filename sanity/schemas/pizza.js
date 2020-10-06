@@ -57,12 +57,12 @@ export default {
     },
     prepare: ({ title, media, ...toppings }) => {
       // 1. Filter undefined toppings out
-      console.log('STAY');
+      const tops = Object.values(toppings).filter(Boolean);
       // 2. return the preview objext for the pizza
       return {
         title,
         media,
-        subtitle: Object.values(toppings).join(', '),
+        subtitle: tops.join(', '),
       };
     },
   },
