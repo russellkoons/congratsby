@@ -56,8 +56,14 @@ export default {
       topping3: 'toppings.3.name',
     },
     prepare: ({ title, media, ...toppings }) => {
-      console.log(title, media, toppings);
-      return 'pizza name';
+      // 1. Filter undefined toppings out
+      console.log('STAY');
+      // 2. return the preview objext for the pizza
+      return {
+        title,
+        media,
+        subtitle: Object.values(toppings).join(', '),
+      };
     },
   },
 };
