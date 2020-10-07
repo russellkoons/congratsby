@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable react/prop-types */
 import React from 'react';
 import PatchEvent, { set, unset } from 'part:@sanity/form-builder/patch-event';
 
