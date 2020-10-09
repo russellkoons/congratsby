@@ -12,7 +12,8 @@ export default {
       options: {
         projectId: 'v9yq2cbv',
         dataset: 'production',
-        watch: true,
+        watchMode: true,
+        token: process.env.SANITY_TOKEN,
       },
     },
   ],
