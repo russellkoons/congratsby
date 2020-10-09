@@ -9,6 +9,11 @@ export default {
     {
       // this is the name of the plugin you are adding
       resolve: 'gatsby-source-data',
+      options: {
+        projectId: 'v9yq2cbv',
+        dataset: 'production',
+        watch: true,
+      },
     },
   ],
 };
