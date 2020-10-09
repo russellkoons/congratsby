@@ -1,4 +1,10 @@
 var plugins = [{
+      plugin: require('/home/russell/Desktop/projects/congratsby/gatsby/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      options: {"plugins":[]},
+    },{
+      plugin: require('/home/russell/Desktop/projects/congratsby/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
+      options: {"plugins":[],"projectId":"v9yq2cbv","dataset":"production","watchMode":true},
+    },{
       plugin: require('/home/russell/Desktop/projects/congratsby/gatsby/gatsby-ssr'),
       options: {"plugins":[]},
     }]

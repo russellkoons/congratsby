@@ -12,7 +12,7 @@ export default {
     'gatsby-plugin-styled-components',
     {
       // this is the name of the plugin you are adding
-      resolve: 'gatsby-source-data',
+      resolve: 'gatsby-source-sanity',
       options: {
         projectId: 'v9yq2cbv',
         dataset: 'production',
