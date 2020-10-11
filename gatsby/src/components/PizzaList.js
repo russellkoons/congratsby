@@ -1,6 +1,12 @@
 import { Link } from 'gatsby';
 import React from 'react';
 import Img from 'gatsby-image';
+import styled from 'styled-components';
+
+const PizzaGridStyles = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+`;
 
 function SinglePizza({ pizza }) {
   return (
@@ -18,10 +24,10 @@ function SinglePizza({ pizza }) {
 
 export default function PizzaList({ pizzas }) {
   return (
-    <div>
+    <PizzaGridStyles>
       {pizzas.map((pizza) => (
         <SinglePizza key={pizza.id} pizza={pizza} />
       ))}
-    </div>
+    </PizzaGridStyles>
   );
 }
