@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby';
 
 function countPizzasInTopping(pizzas) {
   // Return the pizzas with counts
-  return pizzas
+  const counts = pizzas
     .map((pizza) => pizza.toppings)
     .flat()
     .reduce((acc, topping) => {
@@ -12,15 +12,21 @@ function countPizzasInTopping(pizzas) {
       if (existingTopping) {
         // If it is, increment by 1
         existingTopping.count += 1;
+      } else {
+        // Otherwise create a new entry in our acc and set it to one
+        acc[topping.id] = {
+          id: topping.id,
+          name: topping.name,
+          count: 1,
+        };
       }
-      // Otherwise create a new entry in our acc and set it to one
-      acc[topping.id] = {
-        id: topping.id,
-        name: topping.name,
-        count: 1,
-      };
       return acc;
     }, {});
+  // Sort them based on counts
+  const sortedToppings = Object.values(counts).sort(
+    (a, b) => b.count - a.count
+  );
+  return sortedToppings;
 }
 
 export default function ToppingsFilter() {
