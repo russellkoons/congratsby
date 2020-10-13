@@ -4,7 +4,18 @@ async function turnPizzasIntoPages({ graphql, actions }) {
   // Get a template for this page
   const pizzaTemplate = path.resolve('./src/templates/Pizza.js');
   // Query all pizzas
-  const { data } = await graphql(``);
+  const { data } = await graphql(`
+    query {
+      pizzas: allSanityPizza {
+        nodes {
+          name
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `);
   // Loop over each and create a page for that pizza
 }
 
