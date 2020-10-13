@@ -17,6 +17,13 @@ async function turnPizzasIntoPages({ graphql, actions }) {
     }
   `);
   // Loop over each and create a page for that pizza
+  data.pizzas.nodes.forEach(pizza => {
+    actions.createPage({
+      // What is the URL for this page
+      path: `pizza/${pizza.slug.current}`,
+      component: pizzaTemplate,
+    });
+  });
 }
 
 export async function createPages(params) {
