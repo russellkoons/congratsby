@@ -11,6 +11,18 @@ export const query = graphql`
     pizza: sanityPizza(slug: { current: { eq: $slug } }) {
       name
       id
+      image {
+        asset {
+          fluid(maxWidth: 800) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
+      toppings {
+        name
+        id
+        vegetarian
+      }
     }
   }
 `;
