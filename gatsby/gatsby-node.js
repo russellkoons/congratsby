@@ -36,7 +36,7 @@ async function turnToppingsIntoPages({ graphql, actions }) {
   const { data } = await graphql(`
     query {
       toppings: allSanityTopping {
-        nodes: {
+        nodes {
           name
           id
         }
