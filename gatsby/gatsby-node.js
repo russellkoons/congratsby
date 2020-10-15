@@ -1,3 +1,4 @@
+import fetch from 'isomorphic-fetch';
 import path from 'path';
 
 async function turnPizzasIntoPages({ graphql, actions }) {
@@ -62,12 +63,16 @@ async function fetchBeersAndTurnIntoNodes({
   createNodeId,
   createContentDigest
 }) {
-  
+  // 1. Fetch a list of beers
+  const res = await fetch('https://sampleapis.com/beers/api/ale');
+  const beers = await res.json();
+  // 2. Loop over each one
+  // 3. Create a node for that beer
 }
 
-export async function sourceNodes() {
+export async function sourceNodes(params) {
   // fetch a list of beers and source them into Gatsby API
-  await Promise.all([fetchBeersAndTurnIntoNodes()]);
+  await Promise.all([fetchBeersAndTurnIntoNodes(params)]);
 }
 
 export async function createPages(params) {
