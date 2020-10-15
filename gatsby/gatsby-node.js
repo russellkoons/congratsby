@@ -61,7 +61,7 @@ async function turnToppingsIntoPages({ graphql, actions }) {
 async function fetchBeersAndTurnIntoNodes({
   actions,
   createNodeId,
-  createContentDigest
+  createContentDigest,
 }) {
   // 1. Fetch a list of beers
   const res = await fetch('https://sampleapis.com/beers/api/ale');
@@ -79,12 +79,12 @@ async function fetchBeersAndTurnIntoNodes({
         contentDigest: createContentDigest(beer),
       },
     };
+    // 3. Create a node for that beer
     actions.createNode({
       ...beer,
       ...nodeMeta,
     });
   }
-  // 3. Create a node for that beer
 }
 
 export async function sourceNodes(params) {
