@@ -9,10 +9,18 @@ export default function BeersPage({ data }) {
       </h2>
       <div>
         {data.beers.nodes.map((beer) => {
-          console.log(beer);
+          const rating = Math.round(beer.rating.average);
           return (
-            <div>
+            <div key={beer.id}>
+              <img src={beer.image} alt={beer.name} />
               <h3>{beer.name}</h3>
+              {beer.price}
+              <p>
+                {`⭐`.repeat(rating)}
+                <span style={{ filter: `grayscale(100%)` }}>
+                  {`⭐`.repeat(5 - rating)}
+                </span>
+              </p>
             </div>
           );
         })}
