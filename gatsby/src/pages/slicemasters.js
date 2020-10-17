@@ -1,5 +1,6 @@
 import { graphql, Link } from 'gatsby';
 import React from 'react';
+import Img from 'gatsby-image';
 
 export default function SlicemastersPage({ data }) {
   const slicemasters = data.slicemasters.nodes;
@@ -9,8 +10,12 @@ export default function SlicemastersPage({ data }) {
         {slicemasters.map((person) => (
           <div>
             <Link to={`slicemaster/${person.slug.current}`}>
-              <span className="mark">{person.name}</span>
+              <h2>
+                <span className="mark">{person.name}</span>
+              </h2>
             </Link>
+            <Img fluid={person.image.asset.fluid} />
+            <p className="description">{person.description}</p>
           </div>
         ))}
       </div>
