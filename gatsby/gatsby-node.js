@@ -60,8 +60,24 @@ async function turnToppingsIntoPages({ graphql, actions }) {
 
 async function turnSlicemastersIntoPages({ graphql, actions }) {
   // Query all Slicemasters
+  const data = await graphql(`
+    query {
+      slicemasters: allSanityPerson {
+        totalCount
+        nodes {
+          name
+          id
+          slug {
+            current
+          }
+        }
+      }
+    }
+  `);
   // Turn each into their own page
   // Figure out how many pages there are based on number of Slicemasters and how many per page
+  const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
+  const pageCount = Math.ceil(data.slicemasters.totalCount / pageSize);
   // Loop from 1 to n
 }
 
