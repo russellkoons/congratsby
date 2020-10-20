@@ -58,6 +58,13 @@ async function turnToppingsIntoPages({ graphql, actions }) {
   // Pass topping data to Pizza.js
 }
 
+async function turnSlicemastersIntoPages({ graphql, actions }) {
+  // Query all Slicemasters
+  // Turn each into their own page
+  // Figure out how many pages there are based on number of Slicemasters and how many per page
+  // Loop from 1 to n
+}
+
 async function fetchBeersAndTurnIntoNodes({
   actions,
   createNodeId,
@@ -99,6 +106,7 @@ export async function createPages(params) {
     turnPizzasIntoPages(params),
     // 2. Toppings
     turnToppingsIntoPages(params),
+    // 3. Slicemasters
+    turnSlicemastersIntoPages(params),
   ]);
-  // 3. Slicemasters
 }
