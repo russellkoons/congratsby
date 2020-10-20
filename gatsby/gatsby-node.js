@@ -60,7 +60,7 @@ async function turnToppingsIntoPages({ graphql, actions }) {
 
 async function turnSlicemastersIntoPages({ graphql, actions }) {
   // Query all Slicemasters
-  const data = await graphql(`
+  const { data } = await graphql(`
     query {
       slicemasters: allSanityPerson {
         totalCount
