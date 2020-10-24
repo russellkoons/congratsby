@@ -43,14 +43,14 @@ export default function SlicemastersPage({ data, pageContext }) {
     <>
       <Pagination
         pageSize={pageContext.pageSize}
-        totalCount={slicemasters.totalCount}
+        totalCount={data.slicemasters.totalCount}
         currentPage={pageContext.currentPage || 1}
         skip={pageContext.skip}
         base="/slicemasters"
       />
       <SlicemasterGrid>
         {slicemasters.map((person) => (
-          <SlicemasterStyles>
+          <SlicemasterStyles key={person.id}>
             <Link to={`slicemaster/${person.slug.current}`}>
               <h2>
                 <span className="mark">{person.name}</span>
