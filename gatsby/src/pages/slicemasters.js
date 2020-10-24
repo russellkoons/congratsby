@@ -37,15 +37,15 @@ const SlicemasterStyles = styled.div`
   }
 `;
 
-export default function SlicemastersPage({ data, pageContaxt }) {
+export default function SlicemastersPage({ data, pageContext }) {
   const slicemasters = data.slicemasters.nodes;
   return (
     <>
       <Pagination
-        pageSize={pageContaxt.pageSize}
+        pageSize={pageContext.pageSize}
         totalCount={slicemasters.totalCount}
-        currentPage={pageContaxt.currentPage || 1}
-        skip={pageContaxt.skip}
+        currentPage={pageContext.currentPage || 1}
+        skip={pageContext.skip}
         base="/slicemasters"
       />
       <SlicemasterGrid>

@@ -10,9 +10,11 @@ export default function Pagination({
 }) {
   // make some variables
   const totalPages = Math.ceil(totalCount / pageSize);
+  const prevPage = currentPage - 1;
+  const nextPage = currentPage + 1;
   return (
     <div>
-      <Link to={`${base}/${currentPage - 1}`}></Link>
+      <Link to={`${base}/${prevPage}`}>&#8592; Prev</Link>
     </div>
   );
 }
