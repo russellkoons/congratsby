@@ -17,8 +17,12 @@ const PaginationStyles = styled.div`
     border-right: 1px solid var(--grey);
     text-decoration: none;
     &[aria-current],
-    .current {
+    &.current {
       color: var(--red);
+    }
+    &[disabled] {
+      pointer-events: none;
+      color: var(--grey);
     }
   }
 `;
@@ -42,7 +46,12 @@ export default function Pagination({
         &#8592; Prev
       </Link>
       {Array.from({ length: totalPages }).map((_, i) => (
-        <Link to={`${base}/${i > 0 ? i + 1 : ''}`}>{i + 1}</Link>
+        <Link
+          className={currentPage === 1 && i === 0 ? 'current' : ''}
+          to={`${base}/${i > 0 ? i + 1 : ''}`}
+        >
+          {i + 1}
+        </Link>
       ))}
       <Link disabled={!hasNext} to={`${base}/${nextPage}`}>
         Next &#8594;
