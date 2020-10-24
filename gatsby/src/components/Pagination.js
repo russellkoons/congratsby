@@ -12,9 +12,16 @@ export default function Pagination({
   const totalPages = Math.ceil(totalCount / pageSize);
   const prevPage = currentPage - 1;
   const nextPage = currentPage + 1;
+  const hasNext = nextPage <= totalPages;
+  const hasPrev = prevPage >= 1;
   return (
     <div>
-      <Link to={`${base}/${prevPage}`}>&#8592; Prev</Link>
+      <Link disabled={!hasPrev} to={`${base}/${prevPage}`}>
+        &#8592; Prev
+      </Link>
+      <Link disabled={!hasNext} to={`${base}/${nextPage}`}>
+        Next &#8594;
+      </Link>
     </div>
   );
 }
