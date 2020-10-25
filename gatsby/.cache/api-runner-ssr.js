@@ -1,11 +1,11 @@
 var plugins = [{
-      plugin: require('/home/russell/Desktop/projects/congratsby/gatsby/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
+      plugin: require('/home/russell/projects/congratsby/gatsby/node_modules/gatsby-plugin-styled-components/gatsby-ssr'),
       options: {"plugins":[]},
     },{
-      plugin: require('/home/russell/Desktop/projects/congratsby/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
-      options: {"plugins":[],"projectId":"v9yq2cbv","dataset":"production","watchMode":true,"token":"sk2iMmyUoTRk0OhPxgWx60enuLspIMmRdZUba7oqZ3Q6NkSYGIRiR1R9EcpEX9b2MEcWNg7W5zoNy9Tulqt20OL0tGEO8V2vavnoGXaVTs3WCVYTmZ7wO0pula9EUJmmyLCgaVUtfPdByMfoiwPMpw8lf5P1r3ELlWaeh8rExvgXZjr6SHK4"},
+      plugin: require('/home/russell/projects/congratsby/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
+      options: {"plugins":[],"projectId":"v9yq2cbv","dataset":"production","watchMode":true},
     },{
-      plugin: require('/home/russell/Desktop/projects/congratsby/gatsby/gatsby-ssr'),
+      plugin: require('/home/russell/projects/congratsby/gatsby/gatsby-ssr'),
       options: {"plugins":[]},
     }]
 // During bootstrap, we write requires at top of this file which looks like:
