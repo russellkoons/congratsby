@@ -104,9 +104,14 @@ async function turnSlicemastersIntoPages({ graphql, actions }) {
     }
   `);
   // Turn each into their own page
-  data.slicemasters.forEach(slicemaster => {
+  data.slicemasters.nodes.forEach(slicemaster => {
     actions.createPage({
-      template: resolve(''),
+      component: resolve('./src/templates/Slicemaster.js'),
+      path: `/slicemaster/${slicemaster.slug.current}`,
+      context: {
+        name: slicemaster.person,
+        slug: slicemaster.slug.current,
+      }
     })
   })
   // Figure out how many pages there are based on number of Slicemasters and how many per page

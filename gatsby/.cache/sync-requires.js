@@ -12,6 +12,7 @@ exports.components = {
   "component---src-pages-orders-js": hot(preferDefault(require("/home/russell/projects/congratsby/gatsby/src/pages/orders.js"))),
   "component---src-pages-pizzas-js": hot(preferDefault(require("/home/russell/projects/congratsby/gatsby/src/pages/pizzas.js"))),
   "component---src-pages-slicemasters-js": hot(preferDefault(require("/home/russell/projects/congratsby/gatsby/src/pages/slicemasters.js"))),
-  "component---src-templates-pizza-js": hot(preferDefault(require("/home/russell/projects/congratsby/gatsby/src/templates/Pizza.js")))
+  "component---src-templates-pizza-js": hot(preferDefault(require("/home/russell/projects/congratsby/gatsby/src/templates/Pizza.js"))),
+  "component---src-templates-slicemaster-js": hot(preferDefault(require("/home/russell/projects/congratsby/gatsby/src/templates/Slicemaster.js")))
 }
 
