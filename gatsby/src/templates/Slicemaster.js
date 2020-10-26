@@ -1,11 +1,16 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
-import styled from 'styled-components';
 
 export default function SlicemasterPage({ data: { person } }) {
   return (
-    <p>Hey</p>
+    <div className="center">
+			<Img fluid={person.image.asset.fluid} />
+			<h2>
+				<span className="mark">{person.name}</span>
+				<p>{person.description}</p>
+			</h2>
+		</div>
   );
 }
 
