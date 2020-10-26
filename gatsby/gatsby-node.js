@@ -1,5 +1,5 @@
 import fetch from 'isomorphic-fetch';
-import path from 'path';
+import path, { resolve } from 'path';
 
 async function turnPizzasIntoPages({ graphql, actions }) {
   // Get a template for this page
@@ -104,6 +104,11 @@ async function turnSlicemastersIntoPages({ graphql, actions }) {
     }
   `);
   // Turn each into their own page
+  data.slicemasters.forEach(slicemaster => {
+    actions.createPage({
+      template: resolve(''),
+    })
+  })
   // Figure out how many pages there are based on number of Slicemasters and how many per page
   const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
   const pageCount = Math.ceil(data.slicemasters.totalCount / pageSize);
