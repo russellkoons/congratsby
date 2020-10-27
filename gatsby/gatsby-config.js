@@ -7,6 +7,7 @@ export default {
     title: `Slick's Slices`,
     siteUrl: `https://gatsby.pizza`,
     description: `The best pizza place in Atlanta`,
+    twitter: '@slicksSlices',
   },
   plugins: [
     'gatsby-plugin-styled-components',
