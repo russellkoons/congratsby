@@ -5,9 +5,9 @@ export default function useForm(defaults) {
 
 	function updateValue(e) {
 		// Check if it's a number and convert
-		let value = e.target.value;
+		let { value } = e.target;
 		if (e.target.type === 'number') {
-			value = parseInt(value);
+			value = parseInt(e.target.value);
 		}
 		setValues({
 			// copy existing values into it
