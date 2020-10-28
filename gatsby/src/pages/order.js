@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import SEO from '../components/SEO';
+import useForm from '../utils/useForm';
 
-export default function OrdersPage() {
-  const [name, setName] = useState('');
+export default function OrderPage() {
+  const { values, updateValues } = useForm({
+    name: '',
+    email: '',
+  });
   return (
     <>
       <SEO title="Order a Pizza!" />
@@ -13,8 +17,8 @@ export default function OrdersPage() {
           <input
             type="text"
             htmlFor="name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
+            value={values.name}
+            onChange={updateValues}
           />
           <label htmlFor="email">Email</label>
           <input type="email" htmlFor="email" />
