@@ -5,7 +5,17 @@ export default function OrdersPage() {
   return (
     <>
       <SEO title="Order a Pizza!" />
-      <p>This is where you make your orders</p>
+      <form>
+        <fieldset>
+          <legend>Your info</legend>
+        </fieldset>
+        <fieldset>
+          <legend>Menu</legend>
+        </fieldset>
+        <fieldset>
+          <legend>Order</legend>
+        </fieldset>
+      </form>
     </>
   );
 }
