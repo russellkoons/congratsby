@@ -18,22 +18,26 @@ export default function OrderPage({ data }) {
       <form>
         <fieldset>
           <legend>Your Info</legend>
-          <label htmlFor="name">Name</label>
-          <input
-            type="text"
-            name="name"
-            id="name"
-            value={values.name}
-            onChange={updateValue}
-          />
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            name="email"
-            id="email"
-            value={values.email}
-            onChange={updateValue}
-          />
+          <label htmlFor="name">
+            Name
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={values.name}
+              onChange={updateValue}
+            />
+          </label>
+          <label htmlFor="email">
+            Email
+            <input
+              type="email"
+              name="email"
+              id="email"
+              value={values.email}
+              onChange={updateValue}
+            />
+          </label>
         </fieldset>
         <fieldset>
           <legend>Menu</legend>
