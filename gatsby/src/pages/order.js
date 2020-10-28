@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 
 export default function OrderPage() {
-  const { values, updateValues } = useForm({
+  const { values, updateValue } = useForm({
     name: '',
     email: '',
   });
@@ -18,10 +18,15 @@ export default function OrderPage() {
             type="text"
             htmlFor="name"
             value={values.name}
-            onChange={updateValues}
+            onChange={updateValue}
           />
           <label htmlFor="email">Email</label>
-          <input type="email" htmlFor="email" />
+          <input
+            type="email"
+            htmlFor="email"
+            value={values.email}
+            onChange={updateValue}
+          />
         </fieldset>
         <fieldset>
           <legend>Menu</legend>
