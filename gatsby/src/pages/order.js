@@ -40,7 +40,7 @@ export default function OrderPage({ data }) {
             />
           </label>
         </fieldset>
-        <fieldset>
+        <fieldset className="menu">
           <legend>Menu</legend>
           {pizzas.map((pizza) => (
             <div key={pizza.id}>
@@ -63,7 +63,7 @@ export default function OrderPage({ data }) {
             </div>
           ))}
         </fieldset>
-        <fieldset>
+        <fieldset className="order">
           <legend>Order</legend>
         </fieldset>
       </OrderStyles>
