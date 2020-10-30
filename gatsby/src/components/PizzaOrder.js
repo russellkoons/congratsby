@@ -1,4 +1,6 @@
 import React from 'react';
+import MenuItemStyles from '../styles/MenuItemStyles';
+import Img from 'gatsby-image';
 
 export default function PizzaOrder({
   order,
@@ -7,8 +9,15 @@ export default function PizzaOrder({
 }) {
   return (
     <>
-      <p>ORDER</p>
-      <p>You have {order.length} items in your order</p>
+      {order.map((singleOrder, index) => {
+        const pizza = pizzas.find(pizza => pizza.id === singleOrder.id)
+        return (
+          <MenuItemStyles key={singleOrder.id}>
+            <Img fluid={pizza.image.asset.fluid} />
+            <h2>{singleOrder.id}</h2>
+          </MenuItemStyles>
+        )
+      })}
     </>
   )
 }
