@@ -8,6 +8,7 @@ import formatMoney from '../utils/formatMoney';
 import OrderStyles from '../styles/OrderStyles';
 import MenuItemStyles from '../styles/MenuItemStyles';
 import usePizza from '../utils/usePizza';
+import PizzaOrder from '../components/PizzaOrder';
 
 export default function OrderPage({ data }) {
   const pizzas = data.pizzas.nodes;
@@ -61,7 +62,7 @@ export default function OrderPage({ data }) {
               </div>
               <div>
                 {['S', 'M', 'L'].map((size) => (
-                  <button type="button" onClick={() => addToOrder({
+                  <button type="button" key={pizza.name + ' ' + size} onClick={() => addToOrder({
                     id: pizza.id,
                     size,
                   })}>
@@ -74,6 +75,11 @@ export default function OrderPage({ data }) {
         </fieldset>
         <fieldset className="order">
           <legend>Order</legend>
+          <PizzaOrder
+            order={order}
+            pizzas={pizzas}
+            removeFromOrder={removeFromOrder}
+          />
         </fieldset>
       </OrderStyles>
     </>
