@@ -16,8 +16,16 @@ export default function PizzaOrder({
         return (
           <MenuItemStyles key={singleOrder.id}>
             <Img fluid={pizza.image.asset.fluid} />
-            <h2>{singleOrder.id}</h2>
+            <h2>{pizza.name}</h2>
             <p>{formatMoney(calculatePizzaPrice(pizza.price, singleOrder.size))}</p>
+            <button
+              type="button"
+              className="remove"
+              title={`Remove ${singleOrder.size} ${pizza.name} from Order`}
+              onClick={() => removeFromOrder(index)}
+            >
+              &times;
+            </button>
           </MenuItemStyles>
         )
       })}
