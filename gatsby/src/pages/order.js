@@ -81,6 +81,10 @@ export default function OrderPage({ data }) {
             removeFromOrder={removeFromOrder}
           />
         </fieldset>
+        <fieldset>
+          <h3>Your total is {calculateOrderTotal(order, pizzas)}</h3>
+          <button type="submit">Order Ahead</button>
+        </fieldset>
       </OrderStyles>
     </>
   );
