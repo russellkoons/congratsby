@@ -83,7 +83,7 @@ export default function OrderPage({ data }) {
           />
         </fieldset>
         <fieldset>
-          <h3>Your total is {calculateOrderTotal(order, pizzas)}</h3>
+          <h3>Your total is {formatMoney(calculateOrderTotal(order, pizzas))}</h3>
           <button type="submit">Order Ahead</button>
         </fieldset>
       </OrderStyles>
