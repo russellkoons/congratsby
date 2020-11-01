@@ -78,7 +78,7 @@ export default function Nav() {
           <Link to="/slicemasters">Slicemasters</Link>
         </li>
         <li>
-          <Link to="/order">Order Ahead</Link>
+          <Link to="/order">Order Ahead!</Link>
         </li>
         {/* <li>
           <button onClick={goToSlicemasters} type="button">
