@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import OrderContext from "../components/OrderContext";
 
 export default function usePizza({ pizzas, inputs }) {
   // Create some state to hold our order
   const [order, setOrder] = useState([]);
+  const silly = useContext(OrderContext);
   // Make a function to add things to order
   function addToOrder(ordered) {
     setOrder([...order, ordered]);
@@ -18,7 +20,6 @@ export default function usePizza({ pizzas, inputs }) {
   }
   // Send this data to a serverless function when they check out
   // TODO
-
   return {
     order,
     addToOrder,
