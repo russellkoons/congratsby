@@ -15,6 +15,7 @@ export default function usePizza({ pizzas, inputs }) {
   function addToOrder(ordered) {
     setOrder([...order, ordered]);
   }
+
   // Make a function to remove things from order
   function removeFromOrder(index) {
     setOrder([
@@ -24,8 +25,14 @@ export default function usePizza({ pizzas, inputs }) {
       ...order.slice(index + 1, ),
     ]);
   }
+
   // Send this data to a serverless function when they check out
-  // TODO
+  // Run when someone submits the forms
+  async function submitOrder(e) {
+    e.preventDefault();
+    setLoading(true);
+  }
+
   return {
     order,
     addToOrder,
@@ -33,5 +40,6 @@ export default function usePizza({ pizzas, inputs }) {
     error,
     loading,
     message,
+    submitOrder,
   }
 }
