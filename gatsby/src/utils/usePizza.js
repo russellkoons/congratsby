@@ -1,7 +1,9 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import OrderContext from "../components/OrderContext";
+import calculateOrderTotal from "./calculateOrderTotal";
+import formatMoney from "./formatMoney";
 
-export default function usePizza({ pizzas, inputs }) {
+export default function usePizza({ pizzas, values }) {
   // Create some state to hold our order
   // We got rid of this line because we moved useState to the provider
   // const [order, setOrder] = useState([]);
@@ -31,6 +33,14 @@ export default function usePizza({ pizzas, inputs }) {
   async function submitOrder(e) {
     e.preventDefault();
     setLoading(true);
+    // gather the data
+    const body = {
+      order,
+      total: formatMoney(calculateOrderTotal(order, pizzas)),
+      name: values.name,
+      email: values.email,
+    }
+    console.log(body);
   }
 
   return {
