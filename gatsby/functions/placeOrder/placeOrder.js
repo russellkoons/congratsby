@@ -11,11 +11,20 @@ const transporter = nodemailer.createTransport({
 });
 
 exports.handler = async (event, context) => {
+  const body = JSON.parse(event.body);
   // validate data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
 
   for (const field of requiredFields) {
     console.log(`Checking that ${field} is good`);
+    if (!body[field]) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({
+          message: `Oops! You're missing the ${field} field`,
+        }),
+      }
+    }
   }
 
   // sent the email
