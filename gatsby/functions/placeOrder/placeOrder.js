@@ -5,12 +5,19 @@ function generateOrderEmail({ order, total }) {
     <h2>Your recent order for ${total}</h2>
     <p>Please start walking over, we will have your order ready in the next 20 minutes!</p>
     <ul>
-      ${order.map(item => `<li>
-        <img src="${item.thumbnail}" alt="${item.name}" />
-        ${item.size} ${item.name} - ${item.price}
-      </li>`)}
+      ${order.map(item => 
+        `<li>
+          <img src="${item.thumbnail}" alt="${item.name}" />
+          ${item.size} ${item.name} - ${item.price}
+        </li>`
+      ).join('')}
     </ul>
-    <p>Your total is $${total} due at pickup</p>
+    <p>Your total is <strong>$${total}</strong> due at pickup</p>
+    <style>
+      ul {
+        list-style: none;
+      }
+    </style>
   </div>`;
 }
 
@@ -55,6 +62,6 @@ exports.handler = async (event, context) => {
   console.log(info);
   return {
     statusCode: 200,
-    body: JSON.stringify(info),
+    body: JSON.stringify({ message: 'Success!' }),
   }
 }
