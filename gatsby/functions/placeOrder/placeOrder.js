@@ -1,5 +1,19 @@
 const nodemailer = require('nodemailer');
 
+function generateOrderEmail({ order, total }) {
+  return `<div>
+    <h2>Your recent order for ${total}</h2>
+    <p>Please start walking over, we will have your order ready in the next 20 minutes!</p>
+    <ul>
+      ${order.map(item => `<li>
+        <img src="${item.thumbnail}" alt="${item.name}" />
+        ${item.size} ${item.name} - ${item.price}
+      </li>`)}
+    </ul>
+    <p>Your total is $${total} due at pickup</p>
+  </div>`;
+}
+
 // create a transport
 const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
@@ -34,9 +48,9 @@ exports.handler = async (event, context) => {
   // test send an email
   const info = await transporter.sendMail({
     from: "Slick's Slices <slick@example.com>",
-    to: "orders@example.com",
+    to: `${body.name} <${body.email}>, orders@example.com`,
     subject: "New order!",
-    html: `<p>Your new pizza order is here!</p>`,
+    html: generateOrderEmail({ order: body.order, total: body.total }),
   });
   console.log(info);
   return {
