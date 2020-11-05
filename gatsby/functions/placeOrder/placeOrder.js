@@ -38,7 +38,7 @@ function wait(ms = 0) {
 } 
 
 exports.handler = async (event, context) => {
-  await wait(5000);
+  // await wait(5000);
   const body = JSON.parse(event.body);
   // validate data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
@@ -55,18 +55,27 @@ exports.handler = async (event, context) => {
     }
   }
 
-  // sent the email
-
-  // send a success or error message
-
-  // test send an email
+  // make sure order isn't empty
+  if (!body.order.length) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({
+        message: `Why would you order nothing?`,
+      }),
+    }
+  }
+  
+  // send the email
   const info = await transporter.sendMail({
     from: "Slick's Slices <slick@example.com>",
     to: `${body.name} <${body.email}>, orders@example.com`,
     subject: "New order!",
     html: generateOrderEmail({ order: body.order, total: body.total }),
   });
+
   console.log(info);
+
+  // send a success or error message
   return {
     statusCode: 200,
     body: JSON.stringify({ message: 'Success!' }),
