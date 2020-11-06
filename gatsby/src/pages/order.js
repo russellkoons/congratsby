@@ -60,13 +60,14 @@ export default function OrderPage({ data }) {
               onChange={updateValue}
             />
           </label>
-            <input
-              type="pimento"
-              name="pimento"
-              id="pimento"
-              value={values.pimento}
-              onChange={updateValue}
-            />
+          <input
+            type="pimento"
+            name="pimento"
+            id="pimento"
+            value={values.pimento}
+            onChange={updateValue}
+            className="pimento"
+          />
         </fieldset>
         <fieldset className="menu" disabled={loading}>
           <legend>Menu</legend>
