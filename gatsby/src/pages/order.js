@@ -16,6 +16,7 @@ export default function OrderPage({ data }) {
   const { values, updateValue } = useForm({
     name: '',
     email: '',
+    pimento: '',
   });
   const {
     order,
@@ -56,6 +57,13 @@ export default function OrderPage({ data }) {
               name="email"
               id="email"
               value={values.email}
+              onChange={updateValue}
+            />
+            <input
+              type="pimento"
+              name="pimento"
+              id="pimento"
+              value={values.pimento}
               onChange={updateValue}
             />
           </label>
