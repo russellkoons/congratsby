@@ -59,6 +59,7 @@ export default function OrderPage({ data }) {
               value={values.email}
               onChange={updateValue}
             />
+          </label>
             <input
               type="pimento"
               name="pimento"
@@ -66,7 +67,6 @@ export default function OrderPage({ data }) {
               value={values.pimento}
               onChange={updateValue}
             />
-          </label>
         </fieldset>
         <fieldset className="menu" disabled={loading}>
           <legend>Menu</legend>
