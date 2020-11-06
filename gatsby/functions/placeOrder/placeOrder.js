@@ -26,8 +26,8 @@ const transporter = nodemailer.createTransport({
   host: process.env.MAIL_HOST,
   port: 587,
   auth: {
-      user: process.env.MAIL_USER,
-      pass: process.env.MAIL_PASS,
+    user: process.env.MAIL_USER,
+    pass: process.env.MAIL_PASS,
   }
 });
 
@@ -40,6 +40,13 @@ function wait(ms = 0) {
 exports.handler = async (event, context) => {
   // await wait(5000);
   const body = JSON.parse(event.body);
+  // check for honeypot
+  if (body.pimento) {
+    return {
+      statusCode: 400,
+      body: JSON.stringify({ message: 'i see you' }),
+    }
+  }
   // validate data coming in is correct
   const requiredFields = ['email', 'name', 'order'];
 
