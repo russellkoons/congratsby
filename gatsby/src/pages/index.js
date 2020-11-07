@@ -5,7 +5,7 @@ function CurrentlySlicing() {
     <div>
       <p>CurrentlySlicing</p>
     </div>
-  )
+  );
 }
 
 function HotSlices() {
@@ -13,7 +13,7 @@ function HotSlices() {
     <div>
       <p>HotSlices</p>
     </div>
-  )
+  );
 }
 
 export default function HomePage() {
