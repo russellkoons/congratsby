@@ -7,6 +7,12 @@ export default function Sidebar() {
     // create a new subitem
     S.listItem()
       .title('Home Page')
-      .icon(() => <strong>🔥</strong>),
-  ])
+      .icon(() => <strong>🔥</strong>)
+      .child(
+        S.editor()
+          .schemaType('storeSettings')
+          // make a new document ID, so we don't have a random string of numbers
+          .documentId('downtown')
+      ),
+  ]);
 }
