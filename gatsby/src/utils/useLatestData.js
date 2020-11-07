@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-function useLatestData() {
+export default function useLatestData() {
   // hot slices
   const [hotSlices, setHotSlices] = useState();
   // slicemasters
@@ -27,7 +27,17 @@ function useLatestData() {
             }
           }
         `,
-      })
+      }),
     })
+      .then(res => res.json())
+      .then(res => {
+        // TODO check for errors
+        // set the data to state
+        console.log(res.data);
+      });
   }, []);
+  return {
+    hotSlices,
+    slicemasters,
+  }
 }
