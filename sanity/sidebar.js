@@ -14,5 +14,9 @@ export default function Sidebar() {
           // make a new document ID, so we don't have a random string of numbers
           .documentId('downtown')
       ),
+    // add in the rest of our document items
+    ...S.documentTypeListItems().filter(
+      item => item.getId() !== 'storeSettings'
+    ),
   ]);
 }
