@@ -10,9 +10,9 @@ export default {
   fields: [
     {
       name: 'name',
-      title: 'Pizza Name',
+      title: 'Store Name',
       type: 'string',
-      description: 'Name of the pizza',
+      description: 'Name of the store',
     },
     {
       name: 'slicemaster',
