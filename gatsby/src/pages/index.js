@@ -1,11 +1,12 @@
 import React from 'react';
+import LoadingGrid from '../components/LoadingGrid';
 import { HomePageGrid } from '../styles/Grids';
 import useLatestData from '../utils/useLatestData';
 
 function CurrentlySlicing() {
   return (
     <div>
-      <p>CurrentlySlicing</p>
+      <LoadingGrid />
     </div>
   );
 }
@@ -13,7 +14,7 @@ function CurrentlySlicing() {
 function HotSlices() {
   return (
     <div>
-      <p>HotSlices</p>
+      <LoadingGrid />
     </div>
   );
 }
