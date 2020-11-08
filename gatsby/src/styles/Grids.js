@@ -11,3 +11,8 @@ export const ItemsGrid = styled.div`
   gap: 2rem;
   grid-template-columns: 1fr 1fr;
 `;
+
+// single grid item (for home page)
+export const ItemStyles = styled.div`
+  background: red;
+`;
