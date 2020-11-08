@@ -11,7 +11,7 @@ export default function LoadingGrid({ count }) {
           </p>
           <img
             src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUAAAAECAQAAADsOj3LAAAADklEQVR42mNkgANGQkwAAJoABWH6GPAAAAAASUVORK5CYII="
-            className="Loading"
+            className="loading"
             alt="Loading"
             width="500"
             height="400"
