@@ -6,7 +6,7 @@ import useLatestData from '../utils/useLatestData';
 function CurrentlySlicing() {
   return (
     <div>
-      <LoadingGrid />
+      <LoadingGrid count={4} />
     </div>
   );
 }
@@ -14,7 +14,7 @@ function CurrentlySlicing() {
 function HotSlices() {
   return (
     <div>
-      <LoadingGrid />
+      <LoadingGrid count={4} />
     </div>
   );
 }
