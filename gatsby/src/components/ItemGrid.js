@@ -2,10 +2,9 @@ import React from 'react';
 import { ItemsGrid, ItemStyles } from '../styles/Grids';
 
 export default function ItemGrid({ items }) {
-  console.log(items);
   return (
     <ItemsGrid>
-      {items.map((item) => {
+      {items.map((item) => (
         <ItemStyles>
           <p>
             <span className="mark">{item.name}</span>
@@ -21,7 +20,7 @@ export default function ItemGrid({ items }) {
             }}
           />
         </ItemStyles>
-      })}
+      ))}
     </ItemsGrid>
-  )
+  );
 }

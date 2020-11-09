@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const HomePageGrid = styled.div`
   display: grid;
@@ -21,14 +21,10 @@ export const ItemStyles = styled.div`
     font-size: 0;
   }
   p {
-    top: 0;
     transform: rotate(-2deg) translateY(-140%);
     position: absolute;
     width: 100%;
     left: 0;
-    margin: 0;
-    font-size: 2rem;
-    font-size: clamp(12px, 5vw, 20px);
   }
   .mark {
     display: inline;
