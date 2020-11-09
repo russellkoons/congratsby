@@ -55,7 +55,11 @@ export default function useLatestData() {
         // set the data to state
         setHotSlices(res.data.StoreSettings.hotSlices);
         setSlicemasters(res.data.StoreSettings.slicemaster);
-      });
+      })
+      .catch((err) => {
+        console.log('Shoot');
+        console.log(err);
+      })
   }, []);
   return {
     hotSlices,
