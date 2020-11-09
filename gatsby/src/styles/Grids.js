@@ -12,7 +12,6 @@ export const ItemsGrid = styled.div`
   grid-template-columns: 1fr 1fr;
 `;
 
-// single grid item (for home page)
 export const ItemStyles = styled.div`
   text-align: center;
   position: relative;
