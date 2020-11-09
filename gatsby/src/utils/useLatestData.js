@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 const gql = String.raw;
 
-const deets = gql`
+const deets = `
   name
   _id
   image {
