@@ -51,11 +51,23 @@ const NavStyles = styled.nav`
       font-size: 2rem;
     }
   }
+
   @media (max-width: 600px) {
     --columns: 4;
+    margin-bottom: 2rem;
+    border-bottom: 2px solid var(--grey);
+    padding-bottom: 2rem;
     ul {
       grid-template-rows: auto auto;
       grid-template-columns: repeat(var(--columns), 1fr);
+      justify-items: center;
+    }
+    .logo-item {
+      order: 0;
+      grid-column: 1 / -1;
+    }
+    .logo {
+      transform: none;
     }
   }
 `;
