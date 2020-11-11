@@ -70,6 +70,10 @@ const NavStyles = styled.nav`
       transform: none;
     }
   }
+
+  @media (max-width: 500px) {
+    --columns: 2;
+  }
 `;
 
 // Function for moving between pages without using Link
